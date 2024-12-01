@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кербен Translit - Кыргызчаны ӨҢҮ менен жазыңыз!</title>
+<link rel="stylesheet" href="jquery-ui.css"/>
+<script src="jquery-1.8.3.min.js"></script>    
+<script src="jquery-ui.min.js"></script> 
+<script type="text/javascript">
+$(document).ready(function(){		
+	$(".charLatLow2").hide();
+	$(".txtarea").focus();
+	$("#radio").buttonset();
+	$("input:radio[name=radio]").on("change", function() {
+        if($(this).val()==1) {
+			$("#layout").val(1).attr('checked',true);
+			$(".charLatLow2").hide();
+			$(".charLatLow1").show();
+		}
+		else if($(this).val()==2) {
+			$("#layout").val(2).attr('checked',true);
+			$(".charLatLow1").hide();
+			$(".charLatLow2").show();			
+		}
+		$(".txtarea").focus();
+	}); 
+});
+</script> 
+<script src="translit-1.js"></script> 
+<style>
+body {
+	margin:10px 0px; 
+	padding:0px;
+	text-align:center;
+}
+h1 {
+	text-align:center;
+}
+img {
+	display: block;
+	margin:0px auto;
+}
+#content {
+	width:80%;
+	margin:0px auto;
+	text-align:left;
+	padding:15px;
+	border:1px dashed #333;
+	background-color:#eee;
+}
+.txtarea {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #666666;
+    color: #000000;
+    font-family: Verdana,Tahoma,sans-serif;
+    font-size: 14px;
+    width: 100%;
+	margin-top: 5px;
+}
+#txtcount {
+    float: right;
+}
+#note {
+	margin-top: 10px;
+	color: #444444;
+    font-family: Verdana,Tahoma,sans-serif;
+    font-size: 10px;
+}
+.info, .success, .warning, .error, .validation {
+    border: 1px solid;
+    margin: 10px 0px;
+    padding:15px 10px;
+	text-align:center;
+}
+.error {
+    color: #D8000C;
+    background-color: #FFBABA;
+}
+.charCryLow {
+	display: block;
+	color: white;
+	width: 100%;
+	height: 100%;
+	background: #2F6292;
+	text-align: center;
+	cursor:pointer;
+	padding: 0 2px;
+}
+.charLatLow1, .charLatLow2 {
+	display: block;
+	color: #2F6292;
+	width: 100%;
+	height: 100%;
+	background: white;
+	text-align: center;
+	padding: 0 2px;
+}
+#radio {
+    font-size: 62.5%;
+}
+</style>
+</head> 
+<body>
+<h1>Кыргызчаны <span style="color:red;">Ө</span><span style="color:green;">Ң</span><span style="color:blue;">Ү</span> менен жазыңыз!</h1>
+<noscript><div class="error">Ката: сиздин браузериңизде JavaScript өчүрүлгөн. Ансыз Кербен Translit иштебейт. JavaScriptти кантип орнотууну <a href="http://www.google.com/#q=enable+JavaScript">Google таксырдан сураңыз</a>.</div></noscript>
+<div id="content">
+	<form name="searchform">
+	<div id="radio" style="margin:0px auto;text-align: center;">
+        <input type="radio" id="radio1" name="radio" value="1" checked="checked"/><label for="radio1">ж=zh, й=j</label>
+        <input type="radio" id="radio2" name="radio" value="2"/><label for="radio2">ж=j, й=iy</label>
+    </div>
+	<div style="margin:0px auto;text-align:center;display:none;">
+		<select id="layout" name="layout">
+			<option value="1" selected>ж=zh, й=j</option>
+			<option value="2">ж=j, й=iy</option>
+		</select>
+	</div>
+	<table style="margin:0px auto;border-spacing: 3px; border-collapse: separate;">
+		<tr>                                  
+			<td><span onclick="addchar('а',event);" class="charCryLow">а</span></td>
+			<td><span onclick="addchar('б',event);" class="charCryLow">б</span></td>
+			<td><span onclick="addchar('в',event);" class="charCryLow">в</span></td>
+			<td><span onclick="addchar('г',event);" class="charCryLow">г</span></td>
+			<td><span onclick="addchar('д',event);" class="charCryLow">д</span></td>
+			<td><span onclick="addchar('е',event);" class="charCryLow">е</span></td>
+			<td><span onclick="addchar('ё',event);" class="charCryLow">ё</span></td>
+			<td><span onclick="addchar('ж',event);" class="charCryLow">ж</span></td>
+			<td><span onclick="addchar('з',event);" class="charCryLow">з</span></td>
+			<td><span onclick="addchar('и',event);" class="charCryLow">и</span></td>
+			<td><span onclick="addchar('й',event);" class="charCryLow">й</span></td>
+			<td><span onclick="addchar('к',event);" class="charCryLow">к</span></td>
+			<td><span onclick="addchar('л',event);" class="charCryLow">л</span></td>
+			<td><span onclick="addchar('м',event);" class="charCryLow">м</span></td>
+			<td><span onclick="addchar('н',event);" class="charCryLow">н</span></td>
+			<td><span onclick="addchar('ң',event);" class="charCryLow">ң</span></td>
+			<td><span onclick="addchar('о',event);" class="charCryLow">о</span></td>
+			<td><span onclick="addchar('ө',event);" class="charCryLow">ө</span></td>
+			<td><span onclick="addchar('п',event);" class="charCryLow">п</span></td>
+			<td><span onclick="addchar('р',event);" class="charCryLow">р</span></td>
+			<td><span onclick="addchar('с',event);" class="charCryLow">с</span></td>
+			<td><span onclick="addchar('т',event);" class="charCryLow">т</span></td>
+			<td><span onclick="addchar('у',event);" class="charCryLow">у</span></td>
+			<td><span onclick="addchar('ү',event);" class="charCryLow">ү</span></td>
+			<td><span onclick="addchar('ф',event);" class="charCryLow">ф</span></td>
+			<td><span onclick="addchar('х',event);" class="charCryLow">х</span></td>
+			<td><span onclick="addchar('ц',event);" class="charCryLow">ц</span></td>
+			<td><span onclick="addchar('ч',event);" class="charCryLow">ч</span></td>
+			<td><span onclick="addchar('ш',event);" class="charCryLow">ш</span></td>
+			<td><span onclick="addchar('щ',event);" class="charCryLow">щ</span></td>
+			<td><span onclick="addchar('ъ',event);" class="charCryLow">ъ</span></td>
+			<td><span onclick="addchar('ы',event);" class="charCryLow">ы</span></td>
+			<td><span onclick="addchar('ь',event);" class="charCryLow">ь</span></td>
+			<td><span onclick="addchar('э',event);" class="charCryLow">э</span></td>
+			<td><span onclick="addchar('ю',event);" class="charCryLow">ю</span></td>
+			<td><span onclick="addchar('я',event);" class="charCryLow">я</span></td>
+		</tr>
+		<tr>
+			<td><span class="charLatLow1">a</span><span class="charLatLow2">a</span></td>
+			<td><span class="charLatLow1">b</span><span class="charLatLow2">b</span></td>
+			<td><span class="charLatLow1">v</span><span class="charLatLow2">v</span></td>
+			<td><span class="charLatLow1">g</span><span class="charLatLow2">g</span></td>
+			<td><span class="charLatLow1">d</span><span class="charLatLow2">d</span></td>
+			<td><span class="charLatLow1">e</span><span class="charLatLow2">e</span></td>
+			<td><span class="charLatLow1">yo</span><span class="charLatLow2">yo</span></td>
+			<td><span class="charLatLow1">zh</span><span class="charLatLow2">j</span></td>
+			<td><span class="charLatLow1">z</span><span class="charLatLow2">z</span></td>
+			<td><span class="charLatLow1">i</span><span class="charLatLow2">i</span></td>
+			<td><span class="charLatLow1">j</span><span class="charLatLow2">i,y</span></td>
+			<td><span class="charLatLow1">k</span><span class="charLatLow2">k</span></td>
+			<td><span class="charLatLow1">l</span><span class="charLatLow2">l</span></td>
+			<td><span class="charLatLow1">m</span><span class="charLatLow2">m</span></td>
+			<td><span class="charLatLow1">n</span><span class="charLatLow2">n</span></td>
+			<td><span class="charLatLow1">h</span><span class="charLatLow2">h</span></td>
+			<td><span class="charLatLow1">o</span><span class="charLatLow2">o</span></td>
+			<td><span class="charLatLow1">q,ö</span><span class="charLatLow2">q,ö</span></td>
+			<td><span class="charLatLow1">p</span><span class="charLatLow2">p</span></td>
+			<td><span class="charLatLow1">r</span><span class="charLatLow2">r</span></td>
+			<td><span class="charLatLow1">s</span><span class="charLatLow2">s</span></td>
+			<td><span class="charLatLow1">t</span><span class="charLatLow2">t</span></td>
+			<td><span class="charLatLow1">u</span><span class="charLatLow2">u</span></td>
+			<td><span class="charLatLow1">w,ü</span><span class="charLatLow2">w,ü</span></td>
+			<td><span class="charLatLow1">f</span><span class="charLatLow2">f</span></td>
+			<td><span class="charLatLow1">x</span><span class="charLatLow2">h</span></td>
+			<td><span class="charLatLow1">c</span><span class="charLatLow2">ts</span></td>
+			<td><span class="charLatLow1">ch,ç</span><span class="charLatLow2">ch,ç</span></td>
+			<td><span class="charLatLow1">sh,ş</span><span class="charLatLow2">sh,ş</span></td>
+			<td><span class="charLatLow1">shh</span><span class="charLatLow2">shh</span></td>
+			<td><span class="charLatLow1">#</span><span class="charLatLow2">#</span></td>
+			<td><span class="charLatLow1">y,ı</span><span class="charLatLow2">y,ı</span></td>
+			<td><span class="charLatLow1">'</span><span class="charLatLow2">'</span></td>
+			<td><span class="charLatLow1">je</span><span class="charLatLow2">je</span></td>
+			<td><span class="charLatLow1">yu</span><span class="charLatLow2">yu</span></td>
+			<td><span class="charLatLow1">ya</span><span class="charLatLow2">ya</span></td>
+		</tr>
+	</table>
+	<textarea dir="ltr" name="subject" rows="17" cols="75" wrap="virtual" class="txtarea" onkeypress="translate_letter(event);" onkeydown="AkeyIsDown(event);" onkeyup="lettcount();savechanges();key_up_process();"></textarea>
+	<br/>
+	<input name="btnChangeLang" id="btnChangeLang" type="button" onclick="changelanguage();setfoc();" value="Latin" title="Транслитти ESC же F12 баскычтарына басып которсоңуз болот">&nbsp;&nbsp;
+	<input type="button" onclick="translatealltocharset2();setfoc();" value="сүф" title="Латын ариби менен жазылган текстти бир басуу менен кыргызчага котор">
+	<input type="button" onclick="translatealltocharset1();setfoc();" value="күф" title="Кыргызча жазылган текстти латын ариптерине бир басуу менен котор">
+	&nbsp;&nbsp;
+	<input type="button" onclick="highlightall();setfoc();" value="танда" title="Жазууну танда">
+	<input type="button" onclick="cleartrans();setfoc();lettcount()" value="өчүр" title="Жазууну өчүр">
+	<div id="txtcount" title="Терилген символдордун саны"></div>
+	</form>
+</div>
+<div id="note">Кербен Translit тууралуу пикир жана сунуштарыңыз бар болсо, байланыш дарегибизге кат жазыңыз. <p>Байланыш: translit@kerben.org</p>
+</body>
+</html>
